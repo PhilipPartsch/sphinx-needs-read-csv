@@ -103,7 +103,7 @@ with open('_static/data.csv', 'r') as f:
 
     print(list_of_dict)
 
-if os.path.exists(test_coverage_file):
+if True:
 
     # Here we do have to add mapping
 
