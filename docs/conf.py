@@ -103,6 +103,10 @@ with open('_static/data.csv', 'r') as f:
 
     print(list_of_dict)
 
+dict_of_dict = {}
+for i in list_of_dict:
+    dict_of_dict[i["id"]] = i
+
 collections = {}
 if True:
 
@@ -112,7 +116,7 @@ if True:
         'driver': 'jinja',
         'source': os.path.join('templates', 'needs.rst.template'),
         'target': os.path.join('./', 'needs_{{id|lower}}.rst'),
-        'data': list_of_dict,
+        'data': dict_of_dict,
         'active': True,
         'multiple_files': True,
     }
