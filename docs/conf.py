@@ -103,11 +103,12 @@ with open('_static/data.csv', 'r') as f:
 
     print(list_of_dict)
 
+collections = {}
 if True:
 
     # Here we do have to add mapping
 
-    collections['test_coverage'] = {
+    collections['csv_import'] = {
         'driver': 'jinja',
         'source': os.path.join('templates', 'needs.rst.template'),
         'target': os.path.join('needs.rst'),
