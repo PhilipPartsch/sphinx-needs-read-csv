@@ -83,11 +83,36 @@ needs_types = [
 ]
 
 needs_extra_options = [
-    {"name": "value1",},
+    {"name": "effort",},
 ]
 
 needs_extra_links = [
     dict(option = "targets", incoming = "targets_back", outgoing ="targets",),
 ]
 
+import os
+csv_file = os.path.join(os.path.dirname(__file__), '_static', 'data.csv')
+
+from csv import DictReader
+# open file in read mode
+with open('_static/data.csv', 'r') as f:
+
+    dict_reader = DictReader(f)
+
+    list_of_dict = list(dict_reader)
+
+    print(list_of_dict)
+
+if os.path.exists(test_coverage_file):
+
+    # Here we do have to add mapping
+
+    collections['test_coverage'] = {
+        'driver': 'jinja',
+        'source': os.path.join('templates', 'needs.rst.template'),
+        'target': os.path.join('needs.rst'),
+        'data': list_of_dict,
+        'active': True,
+        'multiple_files': False,
+    }
 

@@ -1,0 +1,3 @@
+type,id,title,content,effort,tragets,
+req,R_req1,Requirement 1,Content Requirement 1,10,,
+test,T_test1,Test 1,Content Test 1,10,R_req1,
