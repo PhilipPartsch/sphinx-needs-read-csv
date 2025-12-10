@@ -111,9 +111,9 @@ if True:
     collections['csv_import'] = {
         'driver': 'jinja',
         'source': os.path.join('templates', 'needs.rst.template'),
-        'target': os.path.join('./', 'needs.rst'),
+        'target': os.path.join('./', 'needs_{{id|lower}}.rst'),
         'data': list_of_dict,
         'active': True,
-        'multiple_files': False,
+        'multiple_files': True,
     }
 
