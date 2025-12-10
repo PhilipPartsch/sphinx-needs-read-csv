@@ -1,0 +1,4 @@
+sphinx
+sphinx-needs
+sphinx-collections
+sphinx-lint
